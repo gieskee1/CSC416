@@ -3,7 +3,7 @@
 //  PickUpSticks
 //
 //  Created by Elizabeth Gieske on 9/7/16.
-//  Copyright © 2016 Elizabeth Gieske. All rights reserved.
+//  Due Date: 9/14
 //
 
 import Foundation
@@ -18,8 +18,9 @@ func getTotalSticks() -> Int {
         } else {
             print("Please enter a number between 10 and 100")
         }
-        if let i = readLine(stripNewline: true){ //keyboard
-            total = Int(i)!
+        let input = readLine(stripNewline: true)
+        if let i = Int(input!) { //keyboard
+            total = i
         }else{
             total = 0
         }
@@ -38,8 +39,9 @@ func getStickAmount(boundary: Int, player: Int) -> Int {
         } else {
             print("Please enter a number between 1 and \(boundary)")
         }
-        if let i = readLine(stripNewline: true){ //keyboard
-            stickAmount = Int(i)!
+        let input = readLine(stripNewline: true)
+        if let i = Int(input!) { //keyboard
+            stickAmount = i
         }else{
             stickAmount = boundary + 1
         }
@@ -51,6 +53,7 @@ func getStickAmount(boundary: Int, player: Int) -> Int {
 
 
 
+//main
 
 print("Welcome to the game of sticks!")
 
