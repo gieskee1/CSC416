@@ -59,8 +59,7 @@ func getStickAmount(boundary: Int) -> Int {
 print("Welcome to the game of sticks!")
 var playAgain = 1 //boolean if user wants to play again
 
-var stickLeftArray :[Int] = []
-var stickCPUTakesArray :[Int] = [] //two arrays are parallel
+
 var stickDict: [Int:[Int]] = [:]
 
 for curKey in 1...100{
@@ -76,6 +75,8 @@ for curKey in 1...100{
 //var diceRoll = Int(arc4random_uniform(UInt32(3)))
 
 while playAgain == 1 {
+    var stickLeftArray :[Int] = []
+    var stickCPUTakesArray :[Int] = [] //two arrays are parallel
 var totalSticks:Int = getTotalSticks()
 var curPlayer = "Player 1"
 var sticks = 0
@@ -95,12 +96,14 @@ while (totalSticks > 0){
         totalSticks = totalSticks - sticks
     }
     if (curPlayer == "CPU"){
-        var sticks = Int(arc4random_uniform(UInt32(3)))+1
-        totalSticks = totalSticks - sticks
+        print(stickDict[totalSticks]!)
+        var sticks = Int(arc4random_uniform(UInt32(stickDict[totalSticks]!.count)))+1
+        
         if (totalSticks != 0){
             stickLeftArray.append(totalSticks)
             stickCPUTakesArray.append(sticks)
         }
+        totalSticks = totalSticks - sticks
     }
 
   
@@ -146,7 +149,6 @@ while correctInput == 0 {
     
 }
 
-/*
 
 print(stickDict[1]!)
 print(stickDict[2]!)
@@ -159,7 +161,6 @@ print(stickDict[8]!)
 print(stickDict[9]!)
 print(stickDict[10]!)
 
-*/
 
 
 
